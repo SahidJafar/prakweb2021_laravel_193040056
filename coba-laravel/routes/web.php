@@ -20,13 +20,15 @@ use App\Models\User;
 
 Route::get('/', function () {
     return view('home', [
-        "tittle" => "Home"
+        "tittle" => "Home",
+        'active' => 'home'
     ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
         "tittle" => "About",
+        'active' => 'about',
         "name" => "Sahid Jafar",
         "email" => "sahid11.sj@gmail.com",
         "image" => "profile.jpg"
@@ -35,7 +37,7 @@ Route::get('/about', function () {
 
 
 
-Route::get('/blog', [PostController::class, 'index']);
+Route::get('/posts', [PostController::class, 'index']);
 
 // halaman single post
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
@@ -48,17 +50,18 @@ Route::get('/categories', function(){
     ]);
 });
 
-Route::get('/categories/{category:slug}',function(Category $category){
-    return view('posts', [
-        'tittle' => "Post by Category : $category->name",
-        'active' => 'categories',
-        'posts' => $category->posts->load('category', 'author')
-    ]);
-});
+// Route::get('/categories/{category:slug}',function(Category $category){
+//     return view('posts', [
+//         'tittle' => "Post by Category : $category->name",
+//         'active' => 'categories',
+//         'posts' => $category->posts->load('category', 'author')
+//     ]);
+// });
 
-Route::get('/authors/{author:username}', function(User $author){
-    return view('posts', [
-        'tittle' => "Post By Author : $author->name",
-        'posts' => $author->posts->load('category', 'author')
-    ]);
-});
+// Route::get('/authors/{author:username}', function (User $author) {
+//     return view('posts', [
+//         'title' => "Post By Author : $author->name",
+//         'active' => 'author',
+//         'posts' => $author->posts->load('category', 'author')
+//     ]);
+// });
