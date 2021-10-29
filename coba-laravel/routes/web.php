@@ -53,10 +53,11 @@ Route::get('/categories', function(){
 });
 
 // middleware('guest') digunakan untuk user yang belum terauthenrifikasi
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/login', [LoginController::class, 'index']);
 
 // Register
 Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
 
 
 // Route::get('/categories/{category:slug}',function(Category $category){
