@@ -30,23 +30,24 @@ class DatabaseSeeder extends Seeder
     //         'email' => 'Sandhika@gmail.com',
     //         'password' => bcrypt('12345')
     //     ]);
-
     User::factory(3)->create();
 
-        Category::create([
-            'name' => 'Web Programming',
-            'slug' => 'web-programming'
-        ]);
-        Category::create([
-            'name' => 'Web Design',
-            'slug' => 'web-design'
-        ]);
-        Category::create([
-            'name' => 'Personal',
-            'slug' => 'personal'
-        ]);
+    Category::create([
+        'name' => 'Web Programming',
+        'slug' => 'web-programming'
+    ]);
 
-        Post::factory(20)->create();
+    Category::create([
+        'name' => 'Web Design',
+        'slug' => 'web-design'
+    ]);
+
+    Category::create([
+        'name' => 'Personal',
+        'slug' => 'personal'
+    ]);
+
+    Post::factory(20)->create();
         
         // Post::create([
         // //     'title' => 'Judul Pertama',
