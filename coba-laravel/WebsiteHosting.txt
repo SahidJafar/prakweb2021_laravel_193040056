@@ -1,0 +1,11 @@
+URL:https://sahidjafarblog.000webhostapp.com/
+Nama Website : SahidJafarBlog
+Password     : rahasia12345678
+
+Nama Database:sahid_blog
+username Database:sahid
+password:Rahasia_12345678
+
+dbName:id18007315_sahid_blog
+dbUser:id18007315_sahid
+dbHost:localhost
